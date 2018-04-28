@@ -69,6 +69,7 @@ class LinkedList
     node.prev = @tail.prev
     node.next = @tail 
     @tail.prev = node 
+    node 
   end
 
   def update(key, val)
@@ -83,7 +84,7 @@ class LinkedList
     self.each do |node|
       if node.key == key 
         node.remove
-        return 
+        return node 
       end 
     end 
     nil
